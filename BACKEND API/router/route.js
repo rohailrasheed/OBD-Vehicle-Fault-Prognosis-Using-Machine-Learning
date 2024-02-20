@@ -7,24 +7,41 @@ const router = express.Router();
 
 let storedData = [];
 
+let storedValues = [];
+
 const loadCsvFile = "../public/live.csv";
 
 router.get("/", async (req, res) => {
-  res.send("Server is Running Successfully!!.");
+  res.send("Server Is Running!!!");
 });
 
 router.get("/api/getTrainData", async (req, res) => {
   res.status(200).json({ message: "true", data: storedData });
 });
 
+// post from the model
 router.post("/api/postModelData", async (req, res) => {
   storedData = [];
-  console.log("bodybodybody", req.body);
   const { values } = req.body;
-  console.log("valuesvalues", values);
   storedData.push(values);
 
   res.status(200).json({ message: true, data: values });
+});
+
+// fetch from the model
+router.get("/api/getFormValues", async (req, res) => {
+  if (storedValues.length != 0) {
+    res.status(200).json({ message: true, data: storedValues });
+  }
+  res.status(200).json({ message: false, data: "Values Are Empty!!" });
+});
+
+router.post("/api/postFormValues", async (req, res) => {
+  storedValues = [];
+  const { values } = req.body;
+  storedValues.push(values);
+  console.log("valuesvalues", values);
+  res.status(200).json({ status: true, message: "Form Submit Successfully!!" });
 });
 
 router.get("/api/loadcsv", async (req, res) => {
