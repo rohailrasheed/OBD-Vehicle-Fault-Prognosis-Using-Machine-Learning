@@ -4,7 +4,8 @@ import Billing from "layouts/billing";
 import VirtualReality from "layouts/virtual-reality";
 import SignIn from "layouts/authentication/sign-in";
 import ArgonBox from "components/ArgonBox";
-import ElectricCarSharpIcon from '@mui/icons-material/ElectricCarSharp';
+import ElectricCarSharpIcon from "@mui/icons-material/ElectricCarSharp";
+import OBDEntries from "layouts/OBD Entries";
 
 const routes = [
   {
@@ -20,10 +21,16 @@ const routes = [
     name: "Drives",
     key: "Drives",
     route: "/drives",
-    icon: (
-      <ElectricCarSharpIcon color="error"/>
-    ),
+    icon: <ElectricCarSharpIcon color="error" />,
     component: <Tables />,
+  },
+  {
+    type: "route",
+    name: "OBD Entries",
+    key: "OBD Entries",
+    route: "/obdEntries",
+    icon: <ArgonBox component="i" color="success" fontSize="14px" className="ni ni-credit-card" />,
+    component: <OBDEntries />,
   },
   {
     type: "route",

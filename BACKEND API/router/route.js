@@ -30,17 +30,14 @@ router.post("/api/postModelData", async (req, res) => {
 
 // fetch from the model
 router.get("/api/getFormValues", async (req, res) => {
-  if (storedValues.length != 0) {
-    res.status(200).json({ message: true, data: storedValues });
-  }
-  res.status(200).json({ message: false, data: "Values Are Empty!!" });
+  console.log("storedValues", storedValues);
+  res.status(200).json({ message: true, data: storedValues });
 });
 
 router.post("/api/postFormValues", async (req, res) => {
   storedValues = [];
   const { values } = req.body;
   storedValues.push(values);
-  console.log("valuesvalues", values);
   res.status(200).json({ status: true, message: "Form Submit Successfully!!" });
 });
 
