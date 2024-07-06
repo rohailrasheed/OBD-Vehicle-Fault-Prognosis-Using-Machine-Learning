@@ -29,4 +29,4 @@ from sklearn.neighbors import KNeighborsClassifier
 ![](/graph.png)
 
 ## Correlation Matrix
-![](/correlation matrix.png)
+![](/correlation.png)
