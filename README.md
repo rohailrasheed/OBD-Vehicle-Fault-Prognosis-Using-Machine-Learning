@@ -23,10 +23,10 @@ from sklearn.neighbors import KNeighborsClassifier
 ```
 
 ## Heatmap
-![](/Poster.jpg)
+![](/heatmap.png)
 
 ## Graph
-![](/Poster.jpg)
+![](/graph.png)
 
 ## Correlation Matrix
-![](/Poster.jpg)
+![](/correlation matrix.png)
